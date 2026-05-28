@@ -111,8 +111,12 @@ DATABASES = {
         ),  # Read MySQL password dynamically from .env
         "HOST": env("DB_HOST"),  # Read MySQL host dynamically from .env
         "PORT": env("DB_PORT"),  # Read MySQL port dynamically from .env
+        "OPTIONS": {
+            "ssl_mode": "REQUIRED",
+        },
     }
 }
+
 
 
 # Password validation
