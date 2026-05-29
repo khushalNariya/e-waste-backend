@@ -115,6 +115,7 @@ DATABASES = {
         "OPTIONS": {
             "ssl_mode": "REQUIRED",
         },
+        "CONN_MAX_AGE": 600,  # Keep database connections alive for 10 minutes to reduce latency
     }
 }
 
