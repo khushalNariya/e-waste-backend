@@ -7,3 +7,4 @@ mysqlclient
 django-environ
 pillow
 gunicorn
+whitenoise
