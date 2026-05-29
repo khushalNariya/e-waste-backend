@@ -61,10 +61,9 @@ INSTALLED_APPS = [
     "app_13_reward_orders",
     "app_14_reward_returns",
     "app_15_reward_replaces",
-
-        "rest_framework",  # (DRF) for building APIs
-        "django_filters",  # Filtering & search functionality in DRF
-        "corsheaders",
+    "rest_framework",  # (DRF) for building APIs
+    "django_filters",  # Filtering & search functionality in DRF
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
@@ -72,7 +71,6 @@ MIDDLEWARE = [
     "e_waste_recycling.middleware.NormalizeDoubleSlashMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
-
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -119,7 +117,6 @@ DATABASES = {
         },
     }
 }
-
 
 
 # Password validation
