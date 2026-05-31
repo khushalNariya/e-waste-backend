@@ -6,6 +6,15 @@ import sys
 
 def main():
     """Run administrative tasks."""
+    # Add apps and its subdirectories to sys.path so commands can load modules properly
+    from pathlib import Path
+    BASE_DIR = Path(__file__).resolve().parent
+    sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
+    sys.path.insert(0, os.path.join(BASE_DIR, 'apps', 'authentication'))
+    sys.path.insert(0, os.path.join(BASE_DIR, 'apps', 'core'))
+    sys.path.insert(0, os.path.join(BASE_DIR, 'apps', 'rewards'))
+    sys.path.insert(0, os.path.join(BASE_DIR, 'apps', 'setup_data'))
+
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'e_waste_recycling.settings')
     try:
         from django.core.management import execute_from_command_line

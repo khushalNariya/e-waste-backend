@@ -17,6 +17,14 @@ import environ  # Import django-environ package to read .env variables
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Add apps and its subdirectories to sys.path so imports work seamlessly
+import sys
+sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
+sys.path.insert(0, os.path.join(BASE_DIR, 'apps', 'authentication'))
+sys.path.insert(0, os.path.join(BASE_DIR, 'apps', 'core'))
+sys.path.insert(0, os.path.join(BASE_DIR, 'apps', 'rewards'))
+sys.path.insert(0, os.path.join(BASE_DIR, 'apps', 'setup_data'))
+
 # Initialize environment variables reader
 env = environ.Env(DEBUG=(bool, False))  # Cast DEBUG as boolean, default is False
 
@@ -201,8 +209,5 @@ USE_TZ = True
 # MEDIA_ROOT = os.path.join(BASE_DIR, "app_4_Education", "education_images")
 # MEDIA_URL = "/education_images/"
 
-MEDIA_ROOT = BASE_DIR
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
-
-# MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-# MEDIA_URL = "/media/"
