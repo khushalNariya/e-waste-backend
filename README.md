@@ -45,31 +45,43 @@ The backend is structured into specialized Django apps for maximum scalability a
 ---
 
 ## 📁 Project Directory Structure
+
 ```text
 e_waste_recycling/
 │
-├── e_waste_recycling/          # Project settings, routing (urls.py) and wsgi
-├── app_1_users/                # Auth & User Profiles
-├── app_2_e_Facility/           # Drop Point Facility Management
-├── app_3_Recycling_info/       # Recycling tips & resources
-├── app_4_Education/            # Educational articles
-├── app_5_Home/                 # Banner & dynamic home content
-├── app_6_Brands/               # Brand entities
-├── app_7_Category_Brand_Map/   # Core product mapping logic
-├── app_8_Reward_Rules/         # Point calculation formulas
-├── app_9_Reward_Products/      # Redeemable rewards catalog
-├── app_10_E_Waste_Submission/  # E-waste deposit submissions
-├── app_11_User_Rewards/        # Points tracking
-├── app_12_Reward_Cart/         # Reward checkout cart
-├── app_13_reward_orders/       # Order tracking & processing
-├── app_14_reward_returns/      # Order returns with proofs
-├── app_15_reward_replaces/     # Order replacements with proofs
+├── e_waste_recycling/              # Core project configurations (settings, routing, wsgi/asgi)
 │
-├── manage.py                   # Django CLI
-├── requirements.txt            # Package dependencies
-└── .gitignore                  # Git untracked registry
+├── apps/                           # Modular backend applications grouped by function
+│   │
+│   ├── authentication/             # User profiles, Registration, Login & JWT Auth
+│   │   └── app_1_users/
+│   │
+│   ├── core/                       # Core recycling and submission logic
+│   │   ├── app_2_e_Facility/       # Drop point facilities
+│   │   ├── app_3_Recycling_info/   # Public recycling resource portal
+│   │   ├── app_5_Home/             # Banners & hero image configurations
+│   │   └── app_10_E_Waste_Submission/# E-waste deposit workflows & proofs
+│   │
+│   ├── rewards/                    # Reward shopping cart & orders loop
+│   │   ├── app_8_Reward_Rules/     # Points calculation logic
+│   │   ├── app_9_Reward_Products/  # Points redeemable catalog
+│   │   ├── app_11_User_Rewards/    # User wallet & transaction history
+│   │   ├── app_12_Reward_Cart/     # Rewards shopping cart
+│   │   ├── app_13_reward_orders/   # Reward checkouts & status tracking
+│   │   ├── app_14_reward_returns/  # Rewards returns with proof uploads
+│   │   └── app_15_reward_replaces/ # Rewards replacements with proof uploads
+│   │
+│   └── setup_data/                 # Category, Brand & Education datasets
+│       ├── app_4_Education/        # Educational articles
+│       ├── app_6_Brands/           # Registered brands
+│       └── app_7_Category_Brand_Mapping/ # Category-brand-model relationship mappings
+│
+├── media/                          # Dedicated folder for user uploaded dynamic images
+├── static/                         # Folder for static CSS and JavaScript files
+├── manage.py                       # Django CLI tool
+├── requirements.txt                # List of Python dependencies
+└── .gitignore                      # Git ignored files configuration
 ```
-
 ---
 
 ## 🛠️ Local Installation & Setup
