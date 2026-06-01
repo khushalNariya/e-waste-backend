@@ -375,5 +375,5 @@ from django.urls import re_path
 
 # Serve media files manually to force Django to serve them in production (when DEBUG=False)
 urlpatterns += [
-    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+    re_path(r"^media/(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT}),
 ]
